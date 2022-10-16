@@ -1,4 +1,4 @@
-import { useSpring, animated } from "@react-spring/web";
+import { useSpring, animated, config } from "@react-spring/web";
 import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -26,6 +26,17 @@ const TopPage = () => {
     });
   };
 
+  const [flip, setFlip] = useState(false)
+  const { number } = useSpring({
+    reset: true,
+    reverse: flip,
+    from: { number: 0 },
+    number: 1,
+    delay: 200,
+    config: config.molasses,
+    onRest: () => setFlip(!flip),
+  })
+
   return  (
       <div data-theme="light" className="flex flex-col min-h-screen">
       <Header />
@@ -36,6 +47,9 @@ const TopPage = () => {
           onClick={handleClick}
         >
           {count}
+        </animated.div>
+        <animated.div>
+          {number.to(n => n.toFixed(2))}
         </animated.div>
       </div>
       <Footer />
