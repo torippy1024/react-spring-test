@@ -35,7 +35,7 @@ const Header = () => {
           </ul>
       </div>
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">Title</Link>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">REACT SPRING TEST</Link>
       </div>
       <div className="hidden md:block flex-none">
         <ul className="menu menu-horizontal p-0">

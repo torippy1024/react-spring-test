@@ -4,7 +4,7 @@ import TopPage from './pages/TopPage';
 function App() {
   return (
     <div>
-      <BrowserRouter basename='repository-name'>
+      <BrowserRouter basename='react-spring-test'>
         <Routes>
           <Route index element={<TopPage />} />
         </Routes>
